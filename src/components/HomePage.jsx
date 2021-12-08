@@ -11,7 +11,7 @@ const { Title } = Typography;
 
 
 const HomePage = () => {
-    const {data, isFetching} = useGetCryptosQuery();
+    const {data, isFetching} = useGetCryptosQuery(10);
     // console.log(data);
     const globalStats = data?.data?.stats;
     
@@ -46,5 +46,3 @@ const HomePage = () => {
 }
 
 export default HomePage
-
-
