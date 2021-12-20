@@ -1,22 +1,13 @@
 import React from 'react';
-import {Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Legend,} from 'chart.js';
-import { Chart } from 'react-chartjs-2'
+//import {Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Legend,} from 'chart.js';
+//import { Chart } from 'react-chartjs-2'
 
-import { Line } from 'react-chartjs-2';
+//import { Line } from 'react-chartjs-2';
 
 import { Col, Row, Typography } from 'antd';
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-    );
 
-//const { Title } = Typography;
+const { Title } = Typography;
 
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   const coinPrice = [];
@@ -43,19 +34,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     ],
   };
 
-//   const options = {
-//     scales: {
-//       yAxes: [
-//         {
-//           ticks: {
-//             beginAtZero: true,
-//           },
-//         },
-//       ],
-//     },
-//   };
 
-const options = { scales: { y: { ticks: { beginAtZero: true, }, }, }, };
 
   return (
     <>
@@ -66,7 +45,6 @@ const options = { scales: { y: { ticks: { beginAtZero: true, }, }, }, };
           <Typography.Title level={5} className="current-price">Current {coinName} Price: $ {currentPrice}</Typography.Title>
         </Col>
       </Row>
-      <Line data={data} options={options} />
     </>
   );
 };
